@@ -1,0 +1,9 @@
+main idea is taken from schema.png 
+
+the modifications used are described in included *.png files;
+
+modifications include solutions for supporting following instuctions:
+
+bne, jal, jr, sll/srl
+
+basic drawn picture in each file.
