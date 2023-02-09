@@ -83,7 +83,7 @@ module main_decoder (Opcode, Branch_eq, Branch_ne, MemToReg, ALUSrc, RegDest, Re
             6'b000011:      // JAL
                 begin
                     RegWrite_l = 1'b1;
-                    RegDest_l = 1'b0;
+                    RegDest_l = 1'b1;
                     ALUSrc_l = 1'b0;
                     ALUOp_l = 2'b00;
                     Branch_eq_l = 1'b0;

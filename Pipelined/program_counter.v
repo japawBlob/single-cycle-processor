@@ -1,5 +1,5 @@
-module program_counter(clk, reset, pc_in, pc_out);
-    input clk, reset;
+module program_counter(clk, reset, stall, pc_in, pc_out);
+    input clk, reset, stall;
     input [31:0] pc_in;
     output [31:0] pc_out;
 
@@ -14,7 +14,7 @@ module program_counter(clk, reset, pc_in, pc_out);
     always @(posedge clk) begin
         if (reset) 
             pc_out <= 32'h0;
-        else
+        else if (~stall)
             pc_out <= pc_in;
         end
 endmodule

@@ -1,8 +1,7 @@
-module control_unit (Opcode, Funct, Zero,
-        MemToReg, MemWrite, ALUControl, ALUSrc, RegDest, RegWrite, PCSrc, JAL, JR, shift);
+module control_unit (Opcode, Funct,
+        MemToReg, MemWrite, ALUControl, ALUSrc, RegDest, RegWrite, JAL, JR, shift, Branch_eq, Branch_ne);
     input [5:0] Opcode, Funct;
-    input Zero;
-    output MemToReg, MemWrite, ALUSrc, RegDest, RegWrite, PCSrc, JAL, JR, shift;
+    output MemToReg, MemWrite, ALUSrc, RegDest, RegWrite, JAL, JR, shift, Branch_eq, Branch_ne;
     output [2:0] ALUControl;
     
     wire [1:0] ALUOp;
@@ -12,6 +11,6 @@ module control_unit (Opcode, Funct, Zero,
 
     alu_decoder a_dec (Funct, ALUOp, ALUControl, JR, shift);
 
-    assign PCSrc = Zero & Branch_eq | ~Zero & Branch_ne;
+    // assign PCSrc = Zero & Branch_eq | ~Zero & Branch_ne;
 
 endmodule

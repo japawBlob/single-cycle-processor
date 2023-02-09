@@ -252,7 +252,7 @@ ALUControl = 3'b010;
 | Encoding: | 0000 11ii iiii iiii iiii iiii iiii iiii |
 ```
 RegWrite = 1'b1;
-RegDest = 1'b0;
+RegDest = 1'b1;
 ALUSrc = 1'b0;
 ALUOp = 2'b00;
 Branch_eq = 1'b0;
